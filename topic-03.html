@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>03. 진리노선과 정양순 사모 · 신풍·성광교회 구술사료 기록</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600&display=swap');
+
+  :root{
+    --bg: #faf8f4;
+    --ink: #262320;
+    --ink-soft: #5a544c;
+    --line: #ddd6c8;
+    --card-border: #d9cfb8;
+    --card: #f6f1e7;
+    --card-dim: #e5e4e1;
+    --accent: #9c4a34;
+    --eyebrow: #7d4930;
+    --lede: #5b5346;
+    --dot-solid: #2f3b4c;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  header{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    padding: 30px 0 26px;
+    border-bottom: 1px solid var(--line);
+  }
+  .brand{ display:flex; align-items:baseline; gap:10px; }
+  .brand-title{
+    font-family:'Noto Serif KR', serif;
+    font-weight:700;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+  }
+  .brand-sub{ font-size: 13px; color: var(--ink-soft); }
+  nav{ display:flex; gap: 34px; }
+  nav a{
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+    padding-bottom: 6px;
+  }
+  nav a.active{ color: var(--ink); font-weight: 600; }
+  nav a.active::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:-13px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .breadcrumb{
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 40px 0 12px;
+  }
+  .eyebrow{
+    font-size: 16px;
+    color: var(--eyebrow);
+    font-weight: 600;
+    margin: 0 0 12px;
+  }
+  h1{
+    font-family:'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.3;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .lede{
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--lede);
+    margin: 0 0 32px;
+    max-width: 66ch;
+  }
+
+  /* tab bar */
+  .tabbar{
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin: 0 0 44px;
+  }
+  .tab{
+    display:block;
+    text-decoration:none;
+    color: var(--ink-soft);
+    background: var(--card-dim);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    padding: 10px 10px;
+    font-size: 12px;
+    line-height: 1.4;
+    transition: background .15s, color .15s, border-color .15s;
+  }
+  .tab .tab-idx{ font-weight:700; color: var(--accent); margin-right:2px; }
+  .tab:hover{ background:#ded7c6; color: var(--ink); }
+  .tab.active{ background: var(--ink); border-color: var(--ink); color:#fff; font-weight:600; }
+  .tab.active .tab-idx{ color:#fff; }
+
+  section.block{ padding-bottom: 44px; }
+  section.block h2{
+    font-family:'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .testi-list{ list-style:none; margin:0; padding:0; }
+  .testi-list li{
+    font-size: 14px;
+    line-height: 1.85;
+    padding: 10px 0;
+  }
+  .testi-list .who{
+    font-weight: 700;
+  }
+  .person-link{
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+  .person-link:hover{ opacity:.75; }
+
+  .quote-block{
+    display:block;
+    margin: 10px 0 4px;
+    padding: 12px 16px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: var(--ink);
+    text-decoration:none;
+  }
+  .quote-block:hover{ border-color: var(--ink-soft); border-left-color: var(--accent); background:#f1ebdd; }
+  .quote-block .quote-hint{
+    display:block;
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+
+  .conf{
+    display:inline-block;
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: 999px;
+    margin-left: 6px;
+    background: var(--card-dim);
+    color: var(--ink-soft);
+  }
+  .conf.high{ background: #e7e0cd; color: var(--eyebrow); }
+
+  .divider-label{
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align:center;
+    margin: 28px 0;
+    position: relative;
+  }
+  .divider-label::before, .divider-label::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    width: 40%;
+    height:1px;
+    background: var(--line);
+  }
+  .divider-label::before{ left:0; }
+  .divider-label::after{ right:0; }
+
+  .summary-box{
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    padding: 20px 22px;
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: var(--ink);
+  }
+  .summary-box h3{
+    font-size: 14px;
+    margin: 0 0 10px;
+    font-family:'Noto Serif KR', serif;
+  }
+  .summary-box ul{ margin: 0 0 18px; padding-left: 18px; }
+  .summary-box ul:last-child{ margin-bottom:0; }
+  .summary-box li{ margin-bottom: 8px; }
+
+  .source-note{
+    font-size: 13px;
+    color: var(--ink-soft);
+    padding: 24px 0 60px;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 860px){
+    .wrap{ padding: 0 22px; }
+    nav{ gap: 18px; flex-wrap: wrap; }
+    .tabbar{ grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <span class="brand-title">신풍·성광교회</span>
+      <span class="brand-sub">구술사료 기록</span>
+    </div>
+    <nav>
+      <a href="index.html">홈</a>
+      <a href="people.html">인물별 기록</a>
+      <a href="#">연대별 기록</a>
+      <a href="#">지적도</a>
+      <a href="#">원자료실</a>
+    </nav>
+  </header>
+
+  <p class="breadcrumb">홈 · 관련 증언</p>
+  <p class="eyebrow">구술사료로 되짚는 성광교회의 시작</p>
+  <h1>03. 진리노선과 정양순 사모</h1>
+  <p class="lede">진리 노선(고려파)과 정양순 사모의 신앙 걸음에 관한 증언을 정리할 예정입니다.</p>
+
+<div class="tabbar">
+    <a class="tab" href="topic-00.html" style="white-space:nowrap;"><span class="tab-idx">00</span>손양원과 애양원</a>
+    <a class="tab active" href="topic-01.html" style="white-space:nowrap; font-size:11px;"><span class="tab-idx">01</span>정양순 사모와 애양원</a>
+    <a class="tab" href="topic-02.html" style="white-space:nowrap; font-size:11px;"><span class="tab-idx">02</span>정양순 사모와 성광교회</a>
+    <a class="tab" href="topic-03.html" style="white-space:nowrap; font-size:11px;"><span class="tab-idx">03</span>진리노선과 정양순 사모</a>
+    <a class="tab" href="topic-04.html"><span class="tab-idx">04</span>개척, 남문교회</a>
+    <a class="tab" href="topic-05.html"><span class="tab-idx">05</span>성광교회의 분리</a>
+  </div>
+
+  <section class="block">
+    <div class="summary-box" style="text-align:center; padding:48px 24px; color:var(--ink-soft);">
+      이 항목의 증언 정리는 아직 준비 중입니다.<br>구술사료 정독이 끝나는 대로 이어서 게시할 예정입니다.
+    </div>
+  </section>
+
+  <p class="source-note">근거자료 정리 중</p>
+</div>
+
+</body>
+</html>
