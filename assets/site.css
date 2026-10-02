@@ -46,6 +46,7 @@ footer .sep{margin:0 10px;color:var(--line)}
 /* 0929 추가:  손양원과 애양원 */
 .page-head{padding:48px 0 32px;border-bottom:1px solid var(--line)}
 .page-head .lede{max-width:none}
+.page-head .note{margin:12px 0 0}
 .sec{padding:40px 0;border-bottom:1px solid var(--line)}
 .sec:last-child{border-bottom:0}
 .sec h2{margin:0 0 20px;font-size:18px}
@@ -118,12 +119,14 @@ footer .sep{margin:0 10px;color:var(--line)}
 .say+.say{margin-top:32px} /*한 제목 아래 증언 여러 개일 때 간격*/
 .ask{margin:0 0 16px;color:var(--soft);font-size:15px}
 .ask b{color:var(--ink);font-weight:600}
+.say+.ask{margin-top:32px} /*질문이 바뀔 때 간격*/
 .who{color:var(--accent);font-weight:600;border-bottom:1px solid var(--accent)}
 .who:hover{opacity:.75}
 .quote{display:block;margin:10px 0 0;padding:14px 18px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 4px 4px 0;font-size:15px;line-height:1.85;transition:background .2s,border-color .2s}
 .quote:hover{background:var(--card-on);border-color:var(--soft);border-left-color:var(--accent)}
 .quote small{display:block;margin-top:8px;font-size:12px;color:var(--soft)}
 .quote:hover small{color:var(--accent)}
+.quote+.quote{margin-top:8px} /*같은 증언자 연속 블록 간격*/
 
 /* 1001 추가: 원문·인물 모달 (assets/site.js, class="js-modal") */
 .modal{position:fixed;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(20,20,19,.55)}

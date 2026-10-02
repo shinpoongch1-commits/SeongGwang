@@ -11,7 +11,7 @@ window.SITE = {
       /* 좌측 메뉴(side): 이 메뉴에 속한 페이지(data-page="jeong")에 나타남. href 없는 항목은 흐리게 표시 */
       side: [
         { title: "손양원 목사 순교 이후", href: "jeong.html", items: [{ name: "애양원", href: "jeong_aeyang.html" }, { name: "경제", href: "jeong_economy.html" }] },
-        { title: "정양순 사모 가정예배", items: [{ name: "사택 위치" }, { name: "가정예배" }, { name: "전국모금" }] }
+        { title: "정양순 사모 개척", items: [{ name: "사택 위치", href: "jeong_loca.html" }, { name: "가정예배" }, { name: "전국모금" }, { name: "에피소드", href: "jeong_episodes.html" }] }
       ] },
     { id: "timeline", name: "연대기",            href: "timeline.html" },
     { id: "people",   name: "인물",              href: "people.html" },
