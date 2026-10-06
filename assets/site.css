@@ -173,3 +173,19 @@ footer .sep{margin:0 10px;color:var(--line)}
   .modal-body .timeline-list li::after{left:calc(var(--tl) + 12px)}
   .modal-body .t-when b{font-size:14px}
 }
+/* 1006 증언 묶음 머리·안내·확인, 대화 세트 */
+/* 설명 페이지 번호 체계 1. → (1) → ① : 단계마다 들여쓰기, 큰 제목 사이는 넉넉히 */
+.story h3{margin-top:48px}
+.story h4{margin:24px 0 6px;font-size:16px}
+.story h5{margin:18px 0 4px;font-size:15px;color:var(--brown)}
+.story .lv2{margin-left:1.5em}
+.story .lv3{margin-left:3em}
+.grp{padding:48px 0 0}
+.grp h2{margin:0;font-size:20px;color:var(--brown)}
+.grp .desc{margin:10px 0 0}
+.grp .ask{margin:14px 0 0}
+.desc{margin:0 0 20px;color:var(--soft);font-size:15px}
+.sec>.note{margin:24px 0 0;white-space:pre-line}
+.say .ask{margin:16px 0 0}
+.say .note{margin:8px 0 0}
+@media (max-width:760px){.story .lv2{margin-left:1em}.story .lv3{margin-left:2em}}

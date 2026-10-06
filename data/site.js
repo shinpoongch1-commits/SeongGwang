@@ -5,17 +5,25 @@ window.SITE = {
     { id: "home",     name: "홈",               href: "index.html" },
     { id: "sohn",     name: "손양원 목사",       href: "sohn.html",
       side: [
-        { title: "손양원 목사", href: "sohn.html", items: [{ name: "사택 위치", href: "sohn_loca.html" }, { name: "사택 경제", href: "sohn_economy.html" }, { name: "설교 현장", href: "sohn_sermon.html" }] }
+        { title: "손양원 목사", href: "sohn.html", items: [{ name: "사택위치", href: "sohn_loca.html" }, { name: "사택경제", href: "sohn_economy.html" }, { name: "설교현장", href: "sohn_sermon.html" }] }
       ] },
     { id: "jeong",    name: "정양순 사모",       href: "jeong.html",
       /* 좌측 메뉴(side): 이 메뉴에 속한 페이지(data-page="jeong")에 나타남. href 없는 항목은 흐리게 표시 */
       side: [
         { title: "손양원 목사 순교 이후", href: "jeong.html", items: [{ name: "애양원", href: "jeong_aeyang.html" }, { name: "경제", href: "jeong_economy.html" }] },
-        { title: "정양순 사모 개척", items: [{ name: "사택 위치", href: "jeong_loca.html" }, { name: "가정예배" }, { name: "전국모금" }, { name: "에피소드", href: "jeong_episodes.html" }] }
+        { title: "정양순 사모 개척", items: [{ name: "사택위치", href: "jeong_loca.html" }, { name: "가정예배", href: "jeong_service.html" }, { name: "에피소드", href: "jeong_episodes.html" }] }
       ] },
+    { id: "seongkwang", name: "성광교회",           href: "seongkwang.html",
+      side: [
+        { title: "성광교회 건축", href: "seongkwang.html", items: [{ name: "전국모금", href: "seongkwang_fund.html" }, { name: "건축과정", href: "seongkwang_build.html" }] },
+        { title: "성광·성암", items: [{ name: "착공·준공 순서" }] },
+        { title: "순천 개척", items: [{ name: "박래석 목사" }, { name: "남문교회" }] }
+      ] },
+    { id: "sinpung",   name: "신풍교회",              href: "sinpung.html" },
     { id: "timeline", name: "연대기",            href: "timeline.html" },
-    { id: "people",   name: "인물",              href: "people.html" },
+    { id: "people", name: "인물",            href: "people.html" },
     { id: "archive",  name: "자료실",            href: "archive.html" }
+    
   ],
   /* 1001 추가: 모달이 읽는 자료 위치 ({name} 자리에 이름이 들어감) */
   source: { intvw: "data/intvw/{name}.js", people: "data/people/{name}.js" },
@@ -30,7 +38,7 @@ window.SITE = {
     cards: [
       { title: "손양원 목사", desc: "애양원, 순교",                   more: "자세히 보기",     href: "sohn.html" },
       { title: "정양순 사모", desc: "애양원과 분리, 가정예배와 개척", more: "관련 증언 보기", href: "jeong.html" },
-      { title: "성광 교회",   desc: "정양순 사모의 개척 교회",        more: "관련 증언 보기", href: "history.html?id=4" },
+      { title: "성광 교회",   desc: "정양순 사모의 개척 교회",        more: "관련 증언 보기", href: "seongkwang.html" },
       { title: "신풍 교회",   desc: "예수교장로회한국총공회 소속",    more: "관련 증언 보기", href: "history.html?id=7" }
     ]
   }
