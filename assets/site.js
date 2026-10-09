@@ -21,9 +21,12 @@
   if (side) {
     var app = document.getElementById("app"), box = document.createElement("div");
     box.className = "wrap with-side";
+    var here = location.pathname.split("/").pop() || "index.html";   /* 1009: 지금 보는 페이지 */
+    function a(h, t) { return '<a href="' + h + '"' + (h === here ? ' class="on" aria-current="page"' : "") + ">" + t + "</a>"; }
     box.innerHTML = '<button class="side-btn" type="button">목차 ▾</button><aside class="side">' + side.map(function (g) {
-      return "<p>" + (g.href ? '<a href="' + g.href + '">' + g.title + "</a>" : g.title) + "</p>" + g.items.map(function (i) {
-        return i.href ? '<a href="' + i.href + '">' + i.name + "</a>" : "<span>" + i.name + "</span>";
+      var inG = g.href === here || g.items.some(function (i) { return i.href === here; });   /* 1009: 지금 있는 묶음 */
+      return "<p" + (inG ? ' class="in"' : "") + ">" + (g.href ? a(g.href, g.title) : g.title) + "</p>" + g.items.map(function (i) {
+        return i.href ? a(i.href, i.name) : "<span>" + i.name + "</span>";
       }).join("");
     }).join("") + "</aside>";
     app.parentNode.insertBefore(box, app);

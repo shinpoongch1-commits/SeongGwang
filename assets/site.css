@@ -83,12 +83,15 @@ footer .sep{margin:0 10px;color:var(--line)}
 .side{position:sticky;top:80px;padding:48px 0 32px;font-size:14px}
 .side p{margin:22px 0 6px;color:var(--brown);font-weight:600}
 .side p:first-child{margin-top:0}
-.side p a{display:inline;padding:0;border:0;color:inherit;transition:color .2s} /*1001 묶음 제목 링크(href 있을 때)*/
-.side p a:hover{color:var(--accent);background:none;box-shadow:none}
+.side p a{display:block;padding:6px 10px;margin-left:-10px;border:0;border-radius:6px;color:inherit;transition:background .2s,color .2s} /*1001 묶음 제목 링크(href 있을 때) — 1009 한 줄 칸으로*/
+.side p a:hover{color:var(--ink);background:var(--card-on);box-shadow:none}
 .side a,.side span{display:block;padding:3px 0 3px 14px;border-left:1px solid var(--line);color:var(--soft)}
 .side span{color:var(--off)} /* 원고 없는 항목 */
 .side a{border-radius:0 4px 4px 0;transition:background .2s,box-shadow .2s,color .2s} /*1001 메인 카드처럼 활성화 표시*/
 .side a:hover{color:var(--ink);background:var(--card-on);box-shadow:inset 2px 0 var(--accent)}
+.side a.on{color:var(--ink);font-weight:600;background:var(--card-on);box-shadow:inset 2px 0 var(--accent)} /*1009 지금 보는 페이지*/
+.side p a.on{background:var(--card-on);box-shadow:none} /*1009 묶음 제목 페이지를 보고 있을 때: 줄 전체 배경*/
+.side p.in,.side p.in a{color:var(--ink)} /*1009 지금 있는 묶음 제목 (하위 메뉴처럼 검정)*/
 .side-btn{display:none} /*0930 모바일에서만 보이는 목차 버튼*/
 /* 0930 추가: 정양순 사모 */
 .photos{display:flex;gap:20px;margin-top:28px}
