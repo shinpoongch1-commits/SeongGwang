@@ -2,7 +2,7 @@
    이름 → 인물 정보 모달, 증언 블록 → 인터뷰 원문 모달(해당 지점으로 이동)
    질문은 원고 자리 그대로 두고, 질문 하나 아래(다음 질문 전까지) 증언자를 이름 가나다순으로 정렬
    같은 증언자가 이어지면 이름은 한 번만, 블록만 이어 붙임
-   (1006) 묶음 머리 { group, desc, ask } / 묶음 안내 desc·확인 note / 대화 세트 { who, set: [ {ask, text, find}, {note} ] } → 이름 한 번 + 질문·증언이 한 덩어리 */
+   (1006) 묶음 머리 { group, desc, ask } → 눌러서 접고 펼침(처음엔 모두 접힘) / 묶음 안내 desc·확인 note / 대화 세트 { who, set: [ {ask, text, find}, {note} ] } → 이름 한 번 + 질문·증언이 한 덩어리 */
 (function () {
   var D = window.PAGE, asker = D.asker || "질문자";
   function quote(s) {
@@ -32,11 +32,13 @@
     });
     return h;
   }
+  var g = 0;   // 묶음 머리가 있으면 접기·펼치기: 처음엔 모두 접힘
   var secs = D.sections.map(function (s) {
-    if (s.group) return '<div class="grp"><h2>' + s.group + "</h2>" + (s.desc ? '<p class="desc">' + s.desc + "</p>" : "") + (s.ask ? ask(s.ask) : "") + "</div>";
-    return '<section class="sec">' + (s.title ? "<h2>" + s.title + "</h2>" : "") + (s.desc ? '<p class="desc">' + s.desc + "</p>" : "") +
+    if (s.group) return (g++ ? "</details>" : "") + '<details class="grp"' + (s.id ? ' id="' + s.id + '"' : "") + '><summary><h2>' + s.group + "</h2></summary>" +
+      (s.desc ? '<p class="desc">' + s.desc + "</p>" : "") + (s.ask ? ask(s.ask) : "");
+    return '<section class="sec"' + (s.id ? ' id="' + s.id + '"' : "") + ">" + (s.title ? "<h2>" + s.title + "</h2>" : "") + (s.desc ? '<p class="desc">' + s.desc + "</p>" : "") +
       items(s.items) + (s.note ? '<p class="note">' + s.note + "</p>" : "") + "</section>";
-  }).join("");
+  }).join("") + (g ? "</details>" : "");
   document.getElementById("app").innerHTML =
     '<div class="page-head"><h1 class="eyebrow">' + D.title + "</h1>" + (D.lede ? '<p class="lede">' + D.lede + "</p>" : "") + (D.note ? '<p class="note">' + D.note + "</p>" : "") + "</div>" + secs;
 })();

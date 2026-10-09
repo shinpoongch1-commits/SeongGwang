@@ -180,8 +180,14 @@ footer .sep{margin:0 10px;color:var(--line)}
 .story h5{margin:18px 0 4px;font-size:15px;color:var(--brown)}
 .story .lv2{margin-left:1.5em}
 .story .lv3{margin-left:3em}
-.grp{padding:48px 0 0}
-.grp h2{margin:0;font-size:20px;color:var(--brown)}
+.grp{border-bottom:1px solid var(--line)}
+.grp summary{display:flex;align-items:center;justify-content:space-between;padding:28px 0;cursor:pointer;list-style:none}
+.grp summary::-webkit-details-marker{display:none}
+.grp summary::after{content:"펼치기 +";font-size:13px;color:var(--soft)}
+.grp[open] summary::after{content:"접기 −"}
+.grp[open] summary{padding-bottom:0}
+.grp summary h2{margin:0;font-size:20px;color:var(--brown)}
+.grp .sec:last-child{border-bottom:0}
 .grp .desc{margin:10px 0 0}
 .grp .ask{margin:14px 0 0}
 .desc{margin:0 0 20px;color:var(--soft);font-size:15px}
@@ -189,3 +195,66 @@ footer .sep{margin:0 10px;color:var(--line)}
 .say .ask{margin:16px 0 0}
 .say .note{margin:8px 0 0}
 @media (max-width:760px){.story .lv2{margin-left:1em}.story .lv3{margin-left:2em}}
+.sec[id]{scroll-margin-top:120px}
+/* 1007 근거 자료 표 (연도 × 3열) + 증언 카드 */
+.yt{display:grid;grid-template-columns:6.5em repeat(3,minmax(0,1fr));column-gap:12px}
+.yt>*{padding:10px 0;border-top:1px solid var(--line);min-width:0}
+.yt-h{color:var(--soft);font-size:13px;font-weight:600;border-top:0}
+.yt-y b{display:block;font-size:15px}
+.yt-y small{display:block;font-size:11px;color:var(--soft);line-height:1.4}
+.yt-c{display:flex;flex-direction:column;align-items:flex-start;gap:5px}
+.yt-sub{font-size:11px;color:var(--soft)}
+.yt-lg{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.card-box{height:auto;max-height:88vh}
+@media (max-width:640px){
+  .yt{display:block}
+  .yt-h,.yt-c.empty,.yt>span.yt-y{display:none}
+  .yt-y{padding-top:18px}
+  .yt-c{border-top:0;padding:4px 0 8px 10px;border-left:2px solid var(--line)}
+  .yt-c::before{content:attr(data-col);font-size:11px;color:var(--soft)}
+  .card-box{height:100%;max-height:none}
+}
+details.grp[id]{scroll-margin-top:120px}
+.modal-body figure.photo{margin:0}.modal-body figure.photo img{max-width:100%;height:auto}
+
+/* 1008 v13 착공·준공 순서 — 색은 아래 변수만 고치면 됨 (기본 / 마우스 올림) */
+:root{
+  --vt-on-bg:#5B4636; --vt-on-ink:#FFFFFF;                      /* 보기 전환: 선택된 버튼 */
+  --vt-off-bg:#ECEAE3; --vt-off-ink:#3A3936;                    /* 보기 전환: 선택 안 된 버튼 */
+  --chip-bg:#FFFFFF; --chip-ink:#262624;                         /* 증언 칩 공통 바탕·글자 */
+  --chip-s-line:#D4D1C7;                                         /* 증언: 회색 테두리 */
+  --chip-g-bg:#D3D1CA; --chip-g-ink:#4F4D48;                     /* 연혁·문헌: 회색 바탕, 테두리 없음 (사진이 있으면 누름) */
+  --chip-p-bg:#D9E8F8; --chip-p-ink:#1F3F66;                     /* 사진: 블루 바탕 */
+  --chip-hover-bg:#EEF3FA; --chip-hover-line:#2F4F7A; --chip-hover-ink:#1F3F66;   /* 누르는 칩에 마우스를 올렸을 때 */
+  --chip-p-bg-on:#C5DBF2;                                        /* 사진 칩 마우스 올림 바탕 */
+  --span-bg:#EFEEEA;                                             /* 여러 해 병합 칸 바탕 */
+}
+.vt{display:flex;gap:6px;margin:0 0 12px}
+.vt button{font:inherit;font-size:15px;font-weight:600;padding:8px 22px;border:1px solid var(--vt-on-bg);border-radius:4px;background:var(--vt-off-bg);color:var(--vt-off-ink);cursor:pointer}
+.vt button.on{background:var(--vt-on-bg);color:var(--vt-on-ink)}
+.vt button:not(.on):hover{color:var(--vt-on-bg);background:#fff}
+.ch{display:inline-block;max-width:100%;padding:7px 14px;border-radius:10px;font-size:15px;line-height:1.55;border:1.5px solid transparent;background:var(--chip-bg);color:var(--chip-ink);transition:background .15s,color .15s,border-color .15s}
+.ch.s{border-color:var(--chip-s-line)}
+.ch.g{background:var(--chip-g-bg);color:var(--chip-g-ink)}
+.ch.p{background:var(--chip-p-bg);color:var(--chip-p-ink)}
+a.ch.go{cursor:pointer}
+a.ch.go::after{content:"\00a0→";opacity:.7}
+a.ch.photo::after{content:"\00a0사진\00a0→"}
+a.ch.go:hover,a.ch.go:focus-visible{background:var(--chip-hover-bg);border-color:var(--chip-hover-line);color:var(--chip-hover-ink)}
+a.ch.p:hover,a.ch.p:focus-visible{background:var(--chip-p-bg-on);border-color:transparent}
+.photo-miss{margin:0 0 10px;color:var(--soft);font-size:13px}
+.yt{grid-template-columns:7.5em repeat(2,minmax(0,1fr));column-gap:28px}
+.yt>*{padding:14px 0}
+.yt-y b{font-size:26px;font-weight:600;line-height:1.3}
+.yt-y small{font-size:13px;margin-top:4px}
+.yt-c{gap:10px}
+.yt-h{text-align:center}
+.yt-span{background:var(--span-bg);padding:14px 18px;border-left:0}
+.yt-st{display:block;font-size:14px;color:var(--soft);margin-bottom:4px}
+.yt-lg{justify-content:flex-start;gap:12px;margin:0 0 6px}
+.yt-lg .ch{font-size:14px;white-space:nowrap;padding:6px 14px}
+@media (max-width:640px){.vt button{flex:1}.ch{font-size:14px}.yt-y b{font-size:22px}}
+
+.yt-span.mid{justify-content:center}   /* 병합 칸 중 mid: true 인 칸만 세로 가운데 */
+.yt-span.clamp a.ch{display:inline-flex;align-items:flex-end}
+.yt-span.clamp a.ch .t{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}   /* 병합 칸 중 clamp 인 칸: 칩 글을 2줄까지만 (누르면 증언 카드에 전문) */

@@ -10,14 +10,14 @@ window.SITE = {
     { id: "jeong",    name: "정양순 사모",       href: "jeong.html",
       /* 좌측 메뉴(side): 이 메뉴에 속한 페이지(data-page="jeong")에 나타남. href 없는 항목은 흐리게 표시 */
       side: [
-        { title: "손양원 목사 순교 이후", href: "jeong.html", items: [{ name: "애양원", href: "jeong_aeyang.html" }, { name: "경제", href: "jeong_economy.html" }] },
+        { title: "정양순 사모", href: "jeong.html", items: [{ name: "애양원", href: "jeong_aeyang.html" }, { name: "경제", href: "jeong_economy.html" }] },
         { title: "정양순 사모 개척", items: [{ name: "사택위치", href: "jeong_loca.html" }, { name: "가정예배", href: "jeong_service.html" }, { name: "에피소드", href: "jeong_episodes.html" }] }
       ] },
     { id: "seongkwang", name: "성광교회",           href: "seongkwang.html",
       side: [
-        { title: "성광교회 건축", href: "seongkwang.html", items: [{ name: "전국모금", href: "seongkwang_fund.html" }, { name: "건축과정", href: "seongkwang_build.html" }] },
-        { title: "성광·성암", items: [{ name: "착공·준공 순서" }] },
-        { title: "순천 개척", items: [{ name: "박래석 목사" }, { name: "남문교회" }] }
+        { title: "성광교회 개척", href: "seongkwang.html", items: [{ name: "전국모금", href: "seongkwang_fund.html" }, { name: "건축과정", href: "seongkwang_build.html" }] },
+        { title: "성광·성암 착공·준공", href: "seongkwang_order.html", items: [/*{ name: "돌 예배당 착공·준공", href: "seongkwang_order.html" }*/ ] },
+        { title: "남문교회", href: "seongkwang_nammun.html", items: [] }
       ] },
     { id: "sinpung",   name: "신풍교회",              href: "sinpung.html" },
     { id: "timeline", name: "연대기",            href: "timeline.html" },
